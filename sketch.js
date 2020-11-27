@@ -35,6 +35,7 @@ monkey=createSprite(80,315,20,20);
   bananaGroup = createGroup();
   obstacleGroup = createGroup();
  survivaleTime=0;
+
 }
 
 
@@ -51,6 +52,7 @@ background("lightblue");
     }
   
     if(obstacleGroup.isTouching(monkey)){
+      
         gameState = END;
     }
   if (gameState === END) {
@@ -64,6 +66,8 @@ background("lightblue");
   }
   food();
   obstacle();
+  if (gameState=== PLAY){
+    
   
   stroke("white");
   textSize(20);
@@ -75,6 +79,7 @@ background("lightblue");
   fill("black");
   survivaleTime=Math.ceil(frameCount/frameRate())
    text("Survivale Time " + survivaleTime, 100,50);
+  }
   drawSprites();
 }
 function food(){
